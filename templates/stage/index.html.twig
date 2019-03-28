@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stage index{% endblock %}
+
+{% block contenu %}
+
+    <p></p><h1>Stage index</h1><p></p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Initule</th>
+                <th>Descriptif</th>
+                <th>Domaine</th>
+                <th>Email</th>
+                <!-- <th>URL</th>
+                -->
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stage in stages %}
+            <tr>
+                <td>{{ stage.id }}</td>
+                <td>{{ stage.initule }}</td>
+                <td>{{ stage.descriptif }}</td>
+                <td>{{ stage.domaine }}</td>
+                <td>{{ stage.email }}</td>
+              <!--  <td>{{ stage.URL }}</td>
+              -->
+                <td>
+                    <a href="{{ path('stage_show', {'id': stage.id}) }}">Consulter</a>
+                    <a href="{{ path('stage_edit', {'id': stage.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucun stage enregistré</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('stage_new') }}">Créer un nouveau stage</a>
+{% endblock %}

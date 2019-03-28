@@ -1,0 +1,25 @@
+{%extends "base.html.twig"%}
+
+  {% block contenu %}
+      <p></p>
+        <h2 style='color:black'> Inscription </h2>
+      <p></p>
+      <div>
+        {{ form_start(vueFormulaire, {'attr':{'novalidate':'novalidate'}}) }}
+
+              {{ form_row(vueFormulaire.prenom, {'label' : 'Prénom', 'attr' : {'placeholder' : "Harry"}}) }}
+          <p></p>
+
+              {{ form_row(vueFormulaire.nom, {'label' : 'Nom', 'attr' : {'placeholder' : "Potter"}}) }}
+          <p></p>
+
+              {{ form_row(vueFormulaire.username, {'label' : 'Username', 'attr' : {'placeholder' : "TheBoyWhoSurvived"}}) }}
+          <p></p>
+
+              {{ form_row(vueFormulaire.password, {'label' : 'Mot de passe', 'attr' : {'placeholder' : "********"}}) }}
+          <p></p>
+          <button type="submit" class="btn">S'inscrire</button>
+        {{ form_end(vueFormulaire) }}
+      </div>
+
+  {% endblock %}

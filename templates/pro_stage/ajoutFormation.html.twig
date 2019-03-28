@@ -1,0 +1,28 @@
+{%extends "base.html.twig"%}
+
+  {% block contenu %}
+      <p></p>
+      {% if action == "ajouter" %}
+        <h2 style='color:black'>Ajouter une formation </h2>
+      {% else %}
+        <h2 style='color:black'>Modifier des données </h2>
+      {% endif %}
+      <p></p>
+      <div>
+        {{ form_start(vueFormulaire, {'attr':{'novalidate':'novalidate'}}) }}
+      </div>
+            {{ form_row(vueFormulaire.intitule, {'label' : 'Nom', 'attr' : {'placeholder' : "Licence Pro Informatique"}}) }}
+        <p></p>
+
+            {{ form_row(vueFormulaire.adresse, {'label' : 'Adresse', 'attr' : {'placeholder' : "1 rue des pommiers 64600 Anglet"}}) }}
+        <p></p>
+
+            {{ form_row(vueFormulaire.telephone, {'label' : 'Téléphone', 'attr' : {'placeholder' : "06 12 34 56 78"}}) }}
+        <p></p>
+
+            {{ form_row(vueFormulaire.mail, {'label' : 'Email', 'attr' : {'placeholder' : "contact@domaine.fr"}}) }}
+        <p></p>
+        <button type="submit" class="btn">Enregistrer</button>
+      {{ form_end(vueFormulaire) }}
+
+  {% endblock %}

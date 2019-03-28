@@ -1,0 +1,26 @@
+{%extends "base.html.twig"%}
+
+{% block contenu %}
+
+<div class="container">
+  <div class="row" >
+    <div class="col-12 ">
+      <div class="card" >
+      <div class="card-header">
+        <h3>{{stage.initule}}</h3>
+      </div>
+      <ul class="list-group ">
+        <li class="list-group-item"><p align="center">
+          <img class="card-img-top" src="{{stage.URL}}" alt="Card image cap" style="width: 30rem;" align="center"></a></li>
+
+        <li class="list-group-item"><b>Descriptif : </b>  {{stage.descriptif}} </li>
+        <li class="list-group-item"><b>Entreprise concernée :</b> {{stage.entreprise.intitule}} </li>
+        <li class="list-group-item"><b>Domaine :  </b>{{stage.domaine}} </li>
+        <li class="list-group-item"><b>Mail (responsable) :  </b>{{stage.email}} </li>
+        <li class="list-group-item"><b>Adresse : </b>{{stage.entreprise.adresse}} </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

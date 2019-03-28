@@ -1,0 +1,40 @@
+{%extends "base.html.twig"%}
+
+{% block contenu %}
+  <br><center><h3> Voici la liste des formations de l'IUT</h3></center><br><br>
+
+  <div class="card-columns">
+    {% for formationCour in formations %}
+      <div class="card">
+        <a href="" class="card-link">
+          {% if loop.index == 1 %}
+          <img class="card-img-top" src="https://www.iutbayonne.univ-pau.fr/sites/default/files/images/galerie/Bâtiment-IUT%20336.jpg" alt="Card image cap">
+          {% endif %}
+          {% if loop.index == 2 %}
+          <img class="card-img-top" src="http://www.cncorientation.fr/wp-content/uploads/2016/09/DUT-GEA-1140x642.jpg" alt="Card image cap">
+          {% endif %}
+          {% if loop.index == 3 %}
+          <img class="card-img-top" src="https://www.latelier-web.fr/wp-content/uploads/2016/06/metier-numerique.jpg" alt="Card image cap">
+          {% endif %}
+        </a>
+        <div class="card-body">
+          <a href="{{path('pro_stage_stagesParFormation',{'nom': formationCour.intitule})}}">
+              <h5 class="card-title">{{formationCour.intitule}}</h5>
+<!--              <p class="card-text"><b>Adresse : </b>{{formationCour.adresse}}</p>
+              <p class="card-text"><b>Téléphone : </b>{{formationCour.telephone}}</p>
+              <p class="card-text"><b>Email : </b>{{formationCour.mail}}</p>
+-->
+          </a>
+
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+<!--
+  IMAGES
+  src="http://www.cncorientation.fr/wp-content/uploads/2016/09/DUT-GEA-1140x642.jpg"
+  src="https://www.latelier-web.fr/wp-content/uploads/2016/06/metier-numerique.jpg"
+-->
+
+
+{% endblock %}

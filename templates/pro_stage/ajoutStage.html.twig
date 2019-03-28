@@ -1,0 +1,40 @@
+{%extends "base.html.twig"%}
+
+  {% block contenu %}
+      <p></p>
+      {% if action == "ajouter" %}
+        <h2 style='color:black'>Créer un nouveau stage</h2>
+      {% else %}
+        <h2 style='color:black'>Modifier des données </h2>
+      {% endif %}
+      <p></p>
+      <div>
+        {{ form_start(vueFormulaire) }}
+      </div>
+            {{ form_row(vueFormulaire.initule, {'label' : 'Titre', 'attr' : {'placeholder' : "Web développeur"}}) }}
+        <p></p>
+
+            {{ form_row(vueFormulaire.descriptif, {'label' : 'Description', 'attr' : {'placeholder' : "Ici vous saisissez le descriptif du stage"}}) }}
+        <p></p>
+
+            {{ form_row(vueFormulaire.domaine, {'label' : 'Domaine', 'attr' : {'placeholder' : "Développement Web"}}) }}
+        <p></p>
+
+            {{ form_row(vueFormulaire.email, {'label' : 'Email', 'attr' : {'placeholder' : "contact@entreprise.fr"}}) }}
+        <p></p>
+
+            {{ form_row(vueFormulaire.URL, {'label' : 'Lien vers une image', 'attr' : {'placeholder' : "http://sitewebentreprise.fr/image1.png"}}) }}
+        <p></p>
+
+            {{ form_row(vueFormulaire.entreprise, {'label' : 'Entreprise'}) }}
+        <p></p>
+
+            {{ form_row(vueFormulaire.formations, {'label' : 'Formations'}) }}
+        <p></p>
+
+        <button type="submit" class="btn">Enregistrer</button>
+        
+      {{ form_end(vueFormulaire) }}
+      <p></p>
+
+  {% endblock %}
